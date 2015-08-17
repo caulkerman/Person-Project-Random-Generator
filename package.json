@@ -1,0 +1,25 @@
+{
+  "name": "personal-project-random-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "randomOptions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caulkerman/Person-Project-Random-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caulkerman/Person-Project-Random-Generator/issues"
+  },
+  "homepage": "https://github.com/caulkerman/Person-Project-Random-Generator#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.3"
+  }
+}
