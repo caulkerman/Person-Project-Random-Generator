@@ -1,4 +1,4 @@
-app.controller("setItUpSubjectListCtrl", function($scope, setItUpService) {
+app.controller("setItUpCtrl", function($scope, setItUpService) {
 
 	$scope.subjectList = {  //This is the subject list that will be ng-repeated for both subjects and items
 		subjects: []    //it will look like: {}

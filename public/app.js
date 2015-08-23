@@ -36,12 +36,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     		"setItUpSubjectList@setItUp": {
     			templateUrl: "htmlTemplates/setItUpSubjectList.html",
-    			// controller: "setItUpCtrl"
+    			controller: "setItUpCtrl"
     		},
     		
     		"setItUpItemList@setItUp": {
     			templateUrl: "htmlTemplates/setItUpItemList.html",
-    			// controller: "setItUpCtrl"
+    			controller: "setItUpCtrl"
     		}
     	}
     })
