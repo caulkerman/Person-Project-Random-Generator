@@ -1,0 +1,9 @@
+<h1>Is there anything to show?</h1>
+
+
+<div class="subjectListBody"> <!-- Use css in style.css to determine width -->
+	<div class="subjectList1" ng-repeat="subject in subjects" ng-click="deleteBird($index)"><!-- Oh, we're not deleting here, link to itemList page through UI-router using sref and the name's particular index. -->
+            {{subject.name}} <!-- will need to alter so it matches with the controller -->
+    </div>
+</div>
+

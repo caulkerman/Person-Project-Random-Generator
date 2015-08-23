@@ -1,0 +1,22 @@
+#buttonimg {
+	height: 200px;
+	width: 200px;
+}
+
+.subjectListBody {
+	width: 50%;
+}
+
+.subjectList1 {
+	width: 100%;
+	border-radius: 10px;
+	border-color: #003366;
+	background-color: #1975D1;
+	font-size: 1.75em;
+	color: #fff; /*should turn the font color white*/
+}
+
+.subjectList2 {
+	width: 100%;
+	margin-bottom: 5px;
+}

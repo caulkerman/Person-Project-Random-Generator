@@ -1,1 +1,59 @@
-index.html
+<!DOCTYPE html>
+<html ng-app="randomApp">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="animate.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+	<div ng-controller="mainController">
+		<h1>Can't Choose</h1>
+		<!-- <img id="buttonimg" src="http://www.eliteprospectzone.com/files/Go-Or-Start-Button-6252498.jpg" on-click="gerRandomItem()" class="animated tada"> -->
+		<br>
+		<button ui-sref="subjectList">SUBJECTS</button>
+		<button ui-sref="setItUp">SET IT UP</button>
+		<button ui-sref="help">HELP</button>
+		<button ui-sref="home">HOME</button>
+		<br/>
+		{{test}}
+	</div>
+
+<!-- This is the blue button that is supposed to have a side/dropdown menue to choose from. This is only a test on this page and will not stay here, it will go to the setItUpSubjectList.html and setItUpItemList.html pages. -->
+	<div class="btn-group" dropdown keyboard-nav>
+        <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" dropdown-toggle>
+            Dropdown with keyboard navigation <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li role="menuitem"><a href="#">Action</a></li>
+            <li role="menuitem"><a href="#">Another action</a></li>
+            <li role="menuitem"><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+	<div ui-view></div>
+
+<!-- /////scripts\\\\\\\	 -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+<script src="app.js"></script>
+<script src="js/angControllers/mainCtrl.js"></script>
+<script src="js/angControllers/homeCtrl.js"></script>
+<script src="js/angControllers/itemListGoCtrl.js"></script>
+<script src="js/angControllers/setItUpCtrl.js"></script>
+<script src="js/angControllers/subjectListCtrl.js"></script>
+<script src="js/angServices/mainService.js"></script>
+<script src="js/angServices/homeService.js"></script>
+<script src="js/angServices/itemListService.js"></script>
+<script src="js/angServices/setItUpItemListService.js"></script>
+<script src="js/angServices/setItUpService.js"></script>
+<script src="js/angServices/subjectListService.js"></script>
+
+
+
+</body>
+</html>
