@@ -3,10 +3,8 @@ var Random = require('../models/ServerModel');  //you need to name this correctl
 module.exports = {
 
   create: function(req, res) { /////manipulate before you create the document
-    console.log('in create - req: ', req.body);
     
     var newRandom = new Random(req.body);////this is a document. it is an object, it returns an object.
-    console.log('new Random: ', newRandom);
     newRandom.save(function(err, result) {
       if (err) return res.status(500).send(err);
       else res.send(result);
@@ -22,7 +20,9 @@ module.exports = {
   },
 
   update: function(req, res) {
-    Random.findByIdAndUpdate(req.params.id, req.body, function(err, result) {
+
+    Random.findByIdAndUpdate(req.params.id, {"item": req.body}, {"new": true}, function(err, result) {
+      console.log("in the server controller, update", req.body);
       if (err) return res.status(500).send(err);
       else res.send(result);
     });

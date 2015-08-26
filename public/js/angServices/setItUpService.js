@@ -6,7 +6,6 @@ this.getSubjectLists = function() {
 		method: "GET",
 		url: '/api/subject-items-Lists'
 	}).then(function(response) {
-		console.log("GET - coming from server ", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
@@ -26,14 +25,13 @@ this.getSubjectLists = function() {
 //***************************************************************
 
 this.postSubjectList = function(subject) {
-	console.log("POST - service before it goes to server", subject)
 	var deferred = $q.defer();
 	$http({
 		method: "POST",
 		url: '/api/subject-items-Lists',
 		data: subject
 	}).then(function(response) {
-		// console.log("dataService: response from server", response);
+		console.log("dataService: response from server", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
@@ -52,10 +50,34 @@ this.deleteSubjectList = function(id) {
 	return deferred.promise;
 };
 
+// this.deleteItemList = function(id, index) {
+// 	var deferred = $q.defer();
+// 	$http({
+// 		method: "DELETE",
+// 		url: '/api/subject-items-Lists/' + id,
+// 	}).then(function(response) {
+// 		console.log("deleted", response);
+// 		deferred.resolve(response);
+// 	})
+// 	return deferred.promise;
+// };
+
+this.saveItemNames = function(itemNames, id) {
+	console.log("services put method before it goes to server", itemNames)
+	var deferred = $q.defer();
+	$http({
+		method: "PUT",
+		url: '/api/subject-items-Lists/' + id,
+		data: itemNames
+	}).then(function(response) {
+		console.log("put method response", response)
+		deferred.resolve(response);
+	})
+	return deferred.promise;
+};
 
 
 
-//Might not do PUT. Not sure how to do the PUT and and change name of subjectList and leave the array alone, if it will over-write the object like it did in mongo terminal.
 
 
 });

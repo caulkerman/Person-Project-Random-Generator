@@ -10,11 +10,15 @@
 
 .subjectList-container1 {
 	margin-bottom: 5px;
-	width: 50%;
+	width: 75%;
 	border-style: solid;
-	border-radius: 5px;
-	border-color: #1975D1;
-	border-width: 2px;
+	border-radius: 2px;
+	border-bottom-color: #0066CC;
+	border-left-color: #0066CC;
+	border-top-color: #66A3E0;
+	border-right-color: #66A3E0;
+	background-color: #33D633;
+	border-width: 3px;
 	background-color:#4D94DB;
 	font-size: 1.5em;
 	color: #fff;
@@ -26,22 +30,27 @@
 	width: 50%;
 	margin-bottom: 5px;
 	border-style: solid;
-	border-radius: 5px;
-	border-width: 2px;
+	border-radius: 2px;
+	border-width: 3px;
 	border-color: #00CC00;
 	background-color: #33D633;
 	font-size: 1.5em;
 	color: #fff;
-
-.itemList1 {
-	width: 100%;
+}
+.itemList-container1 {
+	margin-bottom: 5px;
+	width: 75%;
 	border-style: solid;
-	border-radius: 10px;
-	border-color: #1975D1;
-	border-width: 2px;
-	background-color:#4D94DB;
+	border-radius: 2px;
+	border-bottom-color: #FF4719;
+	border-left-color: #FF4719;
+	border-top-color: #FFAD99;
+	border-right-color: #FFAD99;
+	border-width: 3px;
+	background-color:#FF8566;
 	font-size: 1.75em;
 	color: #fff;
+	border
 }
 
 .itemList2 {
@@ -50,16 +59,9 @@
 }
 
 .input {
-	width: 80%;
+	width: 65.5%;
 }
 
-.column1 {
-	width: 40%;
-}
-
-.column2 {
-	width: 40%;
-}
 
 ul {
 	list-style: none;
@@ -67,6 +69,13 @@ ul {
 
 .deleteButton {
 	float: right;
+	color: red;
 
 }
 
+.deleteButton2 {
+	float: right;
+	height: 34px;
+	color: red;
+
+}

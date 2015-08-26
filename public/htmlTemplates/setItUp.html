@@ -1,44 +1,32 @@
 <div style="display: flex;
   flex-direction: row;">
-<div style="width: 50%;">
-<button ng-click="getSubjectLists()">View Subject List</button>
-<br/>
-<br/>
-<input type="text" class="input" placeholder="Enter a New subject or group Name" ng-model="subjectName"/>
-<button ng-click="postSubjectList(subjectName)">ADD</button>
-<br/>
-<br/>
-<!-- <nav id="primary_nav_wrap">
-  <ul>
-    <li> -->
-		<div class="subjectList-container1" ng-repeat="subjectList in subjectLists" ng-click="makeItemList(subjectList.item)">
+  <div style="width: 50%;">
+    <button ng-click="getSubjectLists()">View Subject List</button>
+    <br/>
+    <br/>
+    <input type="text" class="input" placeholder="Enter New Subject/Group Name" ng-model="subjectName" />
+    <button ng-click="postSubjectList(subjectName)">ADD</button>
+    <br/>
+    <br/>
+    <div class="subjectList-container1" ng-repeat="subjectList in subjectLists" ng-click="showItemList(subjectList.item, subjectList._id, subjectList.name)">
 		  {{subjectList.name}}
-      <button class="deleteButton" ng-click="deleteSubjectList($index)">x</button>
-		<!-- <ul>
-        <li><a href="http://yahoo.com">Item List</a></li>
-        <li><a href="#">Delete Subject</a></li>
-      </ul> -->
-      </div>
-	<!-- </li>
-  </ul>
-</nav> -->
-<!-- <button ng-click="getItemLists()">View Item List</button> -->
+        <button class="deleteButton" ng-click="deleteSubjectList($index)">x</button>
+		</div>
 <hr>
-</div>
+  </div>
 
+  <div style="width: 50%;">
+    <h2>{{itemParentName}} List</h2>
+    <input type="text" placeholder="Add Items or People"class="input" ng-model="itemName" />
+    <button ng-click="saveItemNames(itemName)">Add Items</button>
+    <br/>
+    <br/>
+      <div class="itemList-container1" ng-repeat="currentItem in currentItems track by $index">
+        {{currentItem}}
+        <button class="deleteButton2" ng-click="deleteItemList($index)">x</button>
+      </div>
 
-
-<div style="width: 50%;">
-
-<p>THIS IS THE "SET IT UP ITEM LIST" PAGE</p>
-<button ng-click="getItemLists()">View Item List</button>
-<!-- <button ng-click="getSubjectLists()">View Item List</button> -->
-<!-- <div class="subjectList-container" ng-repeat="subjectList in subjectLists"> -->
-<div class="itemList-container" ng-repeat="currentItem in currentItems">
-{{currentItem}}
-</div>
-
-</div>
+  </div>
 </div>
 
 
