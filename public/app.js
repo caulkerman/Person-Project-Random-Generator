@@ -13,8 +13,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
     .state('subjectList', {
       url: "/subjectList",
-      templateUrl: "htmlTemplates/subjectList.html"
+      templateUrl: "htmlTemplates/subjectList.html",
+      controller: "subjectListCtrl"
 	  })
+
+    .state('subjectList.itemListGo', {
+      url: "/itemListGo",
+      templateUrl: "htmlTemplates/itemListGo.html",
+
+    })
 
     .state('itemListGo', {
       url: "/itemListGo",
@@ -26,25 +33,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "htmlTemplates/help.html"
     })
 
+    .state('setItUp', {
+    	url: "/setItUp",
+      templateUrl: "htmlTemplates/setItUp.html",
+      controller: "setItUpCtrl"
+    })
+
     
 
 
-    .state('setItUp', {
-    	url: "/setItUp",
-      views: {
-    	"": {templateUrl: "htmlTemplates/setItUp.html"},
 
-    		"setItUpSubjectList@setItUp": {
-    			templateUrl: "htmlTemplates/setItUpSubjectList.html",
-    			controller: "setItUpCtrl"
-    		},
-    		
-    		"setItUpItemList@setItUp": {
-    			templateUrl: "htmlTemplates/setItUpItemList.html",
-    			controller: "setItUpCtrl"
-    		}
-    	}
-    })
+
 
     });
 

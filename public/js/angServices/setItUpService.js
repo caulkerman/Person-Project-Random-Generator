@@ -6,8 +6,8 @@ this.getSubjectLists = function() {
 		method: "GET",
 		url: '/api/subject-items-Lists'
 	}).then(function(response) {
-		console.log("coming from server ", response.data);
-		deferred.resolve(response.data);
+		console.log("GET - coming from server ", response);
+		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
@@ -25,25 +25,26 @@ this.getSubjectLists = function() {
 ///**************************************************************
 //***************************************************************
 
-this.postSubjectList = function(subjectName) {
+this.postSubjectList = function(subject) {
+	console.log("POST - service before it goes to server", subject)
 	var deferred = $q.defer();
 	$http({
 		method: "POST",
 		url: '/api/subject-items-Lists',
-		data: subjectName
+		data: subject
 	}).then(function(response) {
-		console.log("dataService: response from server", response);
+		// console.log("dataService: response from server", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
 
 
-this.deleteSubjectList = function() {
+this.deleteSubjectList = function(id) {
 	var deferred = $q.defer();
 	$http({
 		method: "DELETE",
-		url: '/api/subject-items-Lists' + id,
+		url: '/api/subject-items-Lists/' + id,
 	}).then(function(response) {
 		console.log("deleted", response);
 		deferred.resolve(response);

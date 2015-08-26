@@ -1,9 +1,11 @@
-<h1>Is there anything to show?</h1>
+<div ui-view></div>
+<button ui-sref="itemListGo">Go</button>
+<h1>Subject List</h1>
+<p>This is the state where the client will proceed to the random generator. This page will show a list of categories or subjects or groups of people and when they click on one it will bring up a list of items that belong to the groups or categories; or lists of people in the groups of people.</p>
+<br/>  
 
-
-<div class="subjectListBody"> <!-- Use css in style.css to determine width -->
-	<div class="subjectList1" ng-repeat="subject in subjects" ng-click="deleteBird($index)"><!-- Oh, we're not deleting here, link to itemList page through UI-router using sref and the name's particular index. -->
-            {{subject.name}} <!-- will need to alter so it matches with the controller -->
+<button ng-click="getSubjectLists()">View Subject List</button>
+	<div class="subjectList-container2" ng-repeat="subject in subjects" ng-click="getSubjectItemsList($index)">
+            {{subject.name}} 
     </div>
-</div>
 

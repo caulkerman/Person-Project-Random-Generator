@@ -7,16 +7,66 @@
 	width: 50%;
 }
 
-.subjectList1 {
-	width: 100%;
-	border-radius: 10px;
-	border-color: #003366;
-	background-color: #1975D1;
-	font-size: 1.75em;
-	color: #fff; /*should turn the font color white*/
+
+.subjectList-container1 {
+	margin-bottom: 5px;
+	width: 50%;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #1975D1;
+	border-width: 2px;
+	background-color:#4D94DB;
+	font-size: 1.5em;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
 }
 
-.subjectList2 {
+.subjectList-container2 {
+	width: 50%;
+	margin-bottom: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 2px;
+	border-color: #00CC00;
+	background-color: #33D633;
+	font-size: 1.5em;
+	color: #fff;
+
+.itemList1 {
+	width: 100%;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #1975D1;
+	border-width: 2px;
+	background-color:#4D94DB;
+	font-size: 1.75em;
+	color: #fff;
+}
+
+.itemList2 {
 	width: 100%;
 	margin-bottom: 5px;
 }
+
+.input {
+	width: 80%;
+}
+
+.column1 {
+	width: 40%;
+}
+
+.column2 {
+	width: 40%;
+}
+
+ul {
+	list-style: none;
+}
+
+.deleteButton {
+	float: right;
+
+}
+

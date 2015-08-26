@@ -1,9 +1,64 @@
-<h3>add html and divs to divide up the subjects column and the items columns</h3>
+<div style="display: flex;
+  flex-direction: row;">
+<div style="width: 50%;">
+<button ng-click="getSubjectLists()">View Subject List</button>
+<br/>
+<br/>
+<input type="text" class="input" placeholder="Enter a New subject or group Name" ng-model="subjectName"/>
+<button ng-click="postSubjectList(subjectName)">ADD</button>
+<br/>
+<br/>
+<!-- <nav id="primary_nav_wrap">
+  <ul>
+    <li> -->
+		<div class="subjectList-container1" ng-repeat="subjectList in subjectLists" ng-click="makeItemList(subjectList.item)">
+		  {{subjectList.name}}
+      <button class="deleteButton" ng-click="deleteSubjectList($index)">x</button>
+		<!-- <ul>
+        <li><a href="http://yahoo.com">Item List</a></li>
+        <li><a href="#">Delete Subject</a></li>
+      </ul> -->
+      </div>
+	<!-- </li>
+  </ul>
+</nav> -->
+<!-- <button ng-click="getItemLists()">View Item List</button> -->
+<hr>
+</div>
 
-<div class="multi-view1">
-      <div class="well" ui-view="setItUpSubjectList"></div>        
-    </div>
 
-<div class="multi-view2">
-      <div class="well" ui-view="setItUpItemList"></div>        
-    </div>
+
+<div style="width: 50%;">
+
+<p>THIS IS THE "SET IT UP ITEM LIST" PAGE</p>
+<button ng-click="getItemLists()">View Item List</button>
+<!-- <button ng-click="getSubjectLists()">View Item List</button> -->
+<!-- <div class="subjectList-container" ng-repeat="subjectList in subjectLists"> -->
+<div class="itemList-container" ng-repeat="currentItem in currentItems">
+{{currentItem}}
+</div>
+
+</div>
+</div>
+
+
+
+
+
+<!--//////SOMEHOW THIS BELOW NEEDS TO GO INTO MY NG-REPEAT DIV////
+//////Also, I am not sure if I am getting the systax for my ng-clicks correct with their corresponding function callers.  Not sure if the ng-click being in the drop down menu will delete that subject list
+
+I am creating my own styled divs that contain the subject list names around the dropdown menu ul's and il's, so I will not need
+the buttons  I need the divs to stretch width: 100%; and buttons not be of variaous sizes due to different lengths of wordings -->
+
+
+
+<!-- <div class="btn-group" dropdown keyboard-nav>
+    <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" dropdown-toggle>
+        Dropdown with keyboard navigation <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+        <li role="menuitem"><a sref="#">{{subjectList.name}} List</a></li> 
+        <li role="menuitem" ng-click="deleteSubjectList()">Delete Subject</a></li>
+    </ul>
+</div> -->

@@ -23,7 +23,7 @@ app.delete('/api/subject-items-Lists/:id', RandomCtrl.delete);
 
 // Connections
 var port = 9876;
-var mongoUri = 'mongodb://localhost:27017/mini-birds-mongoose';
+var mongoUri = 'mongodb://localhost:27017/random-generator';
 
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
