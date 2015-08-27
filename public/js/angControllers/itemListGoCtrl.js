@@ -1,3 +1,5 @@
-app.controller("itemListGo", function() {
-$scope.test;
+app.controller("itemListGoCtrl", function($scope) {
+
+$scope.testo = "hello";
+
 });

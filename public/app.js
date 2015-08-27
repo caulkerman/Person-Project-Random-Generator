@@ -25,7 +25,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('itemListGo', {
       url: "/itemListGo",
-      templateUrl: "htmlTemplates/itemListGo.html"
+      templateUrl: "htmlTemplates/itemListGo.html",
+      controller: "itemListGoCtrl"
     })
     
     .state('help', {

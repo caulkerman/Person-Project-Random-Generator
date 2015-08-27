@@ -50,17 +50,6 @@ this.deleteSubjectList = function(id) {
 	return deferred.promise;
 };
 
-// this.deleteItemList = function(id, index) {
-// 	var deferred = $q.defer();
-// 	$http({
-// 		method: "DELETE",
-// 		url: '/api/subject-items-Lists/' + id,
-// 	}).then(function(response) {
-// 		console.log("deleted", response);
-// 		deferred.resolve(response);
-// 	})
-// 	return deferred.promise;
-// };
 
 this.saveItemNames = function(itemNames, id) {
 	console.log("services put method before it goes to server", itemNames)

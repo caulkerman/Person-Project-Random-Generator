@@ -17,7 +17,6 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 	};
 	
 	
-
 ////////////POST OR CREATE FUNCTIONS IN CRUD////////////////////////
 	$scope.postSubjectList = function(subjectName) { 
 		var subject = {
@@ -36,7 +35,6 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 	};
 
 
-
 ///////////////////PUT OR UPDATE FUNCTIONS IN CRUD///////////////
 	$scope.saveItemNames = function(itemName) {
 		$scope.currentItems.push(itemName);
@@ -48,6 +46,7 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 			}
 		})
 	}
+
 
 ///////////////////DELETE FUNCTIONS IN CRUD//////////////////////
 	$scope.deleteSubjectList = function(index) {  //function caller on setItUpSubjectList.html page

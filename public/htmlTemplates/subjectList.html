@@ -1,10 +1,12 @@
 <div ui-view></div>
 <button ui-sref="itemListGo">Go</button>
 <h1>Subject List</h1>
-<p>This is the state where the client will proceed to the random generator. This page will show a list of categories or subjects or groups of people and when they click on one it will bring up a list of items that belong to the groups or categories; or lists of people in the groups of people.</p>
+<!-- <p>This is the state where the client will proceed to the random generator. This page will show a list of categories or subjects or groups of people and when they click on one it will bring up a list of items that belong to the groups or categories; or lists of people in the groups of people.</p> -->
 <br/>  
 
 <button ng-click="getSubjectLists()">View Subject List</button>
+<br/>
+<br/>
 	<div class="subjectList-container2" ng-repeat="subject in subjects" ng-click="getSubjectItemsList($index)">
             {{subject.name}} 
     </div>
