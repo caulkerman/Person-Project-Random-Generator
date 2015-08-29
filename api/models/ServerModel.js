@@ -12,3 +12,5 @@ var RandomSchema = new mongoose.Schema ({
 
 var collectionName = "random-generator";
 module.exports = mongoose.model("random-generator", RandomSchema, collectionName);
+
+

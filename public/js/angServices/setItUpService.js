@@ -10,19 +10,7 @@ this.getSubjectLists = function() {
 	})
 	return deferred.promise;
 };
-//****************************************************************	
-//*******This code below just to show me the shortcut way*********
 
-// $http.get('/someUrl').
-//   then(function(response) {
-//     // this callback will be called asynchronously
-//     // when the response is available
-//   }, function(response) {
-//     // called asynchronously if an error occurs
-//     // or server returns response with an error status.
-//   });
-///**************************************************************
-//***************************************************************
 
 this.postSubjectList = function(subject) {
 	var deferred = $q.defer();
@@ -31,11 +19,25 @@ this.postSubjectList = function(subject) {
 		url: '/api/subject-items-Lists',
 		data: subject
 	}).then(function(response) {
-		console.log("dataService: response from server", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
+
+
+// this.postRaffleList = function(subject) {
+// 	console.log("raffle service before it goes to server", subject);
+// 	var deferred = $q.defer();
+// 	$http({
+// 		method: "POST",
+// 		url: '/api/raffle-subject-Lists',
+// 		data: subject
+// 	}).then(function(response) {
+// 		console.log("POST response from new server", response);
+// 		deferred.resolve(response);
+// 	})
+// 	return deferred.promise;
+// }
 
 
 this.deleteSubjectList = function(id) {
@@ -52,19 +54,30 @@ this.deleteSubjectList = function(id) {
 
 
 this.saveItemNames = function(itemNames, id) {
-	console.log("services put method before it goes to server", itemNames)
 	var deferred = $q.defer();
 	$http({
 		method: "PUT",
 		url: '/api/subject-items-Lists/' + id,
 		data: itemNames
 	}).then(function(response) {
-		console.log("put method response", response)
+		console.log("items updated", response)
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
 
+// this.saveItemRaffleNames = function(itemNames, id) {
+// 	var deferred = $q.defer();
+// 	$http({
+// 		method: "PUT",
+// 		url: '/api/raffle-subject-Lists/' + id,
+// 		data: itemNames
+// 	}).then(function(response) {
+// 		console.log("items updated", response)
+// 		deferred.resolve(response);
+// 	})
+// 	return deferred.promise;
+// };
 
 
 

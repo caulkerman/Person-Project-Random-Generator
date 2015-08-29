@@ -11,22 +11,28 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "htmlTemplates/homeTmpl.html" 
     })
     
-    .state('subjectList', {
-      url: "/subjectList",
-      templateUrl: "htmlTemplates/subjectList.html",
-      controller: "subjectListCtrl"
+    .state('infinitySubjectList', {
+      url: "/infinitySubjectList",
+      templateUrl: "htmlTemplates/infinitySubjectList.html",
+      controller: "infinitySubjectListCtrl"
 	  })
 
-    .state('subjectList.itemListGo', {
-      url: "/itemListGo",
-      templateUrl: "htmlTemplates/itemListGo.html",
-
+    .state('infinitySubjectList.infinityItemListGo', {
+      url: "/:item",
+      templateUrl: "htmlTemplates/infinityItemListGo.html",
+      controller: "infinityItemListGoCtrl"
     })
 
-    .state('itemListGo', {
-      url: "/itemListGo",
-      templateUrl: "htmlTemplates/itemListGo.html",
-      controller: "itemListGoCtrl"
+    .state('raffleSubjectList', {
+      url: "/raffleSubjectList",
+      templateUrl: "htmlTemplates/raffleSubjectList.html",
+      controller: "raffleSubjectListCtrl"
+    })
+
+    .state("raffleSubjectList.raffleItemListGo", {
+      url: "/:item",
+      templateUrl: "htmlTemplates/raffleItemListGo",
+      controller: "raffleItemListGoCtrl"
     })
     
     .state('help', {

@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 
 // Controllers
 var RandomCtrl = require('./api/controllers/ServerController');
+var RaffleCtrl = require('./api/controllers/raffleServerController');
 
 // Express
 var app = express();
@@ -20,6 +21,9 @@ app.post('/api/subject-items-Lists', RandomCtrl.create);
 app.get('/api/subject-items-Lists', RandomCtrl.read);
 app.put('/api/subject-items-Lists/:id', RandomCtrl.update);
 app.delete('/api/subject-items-Lists/:id', RandomCtrl.delete);
+
+app.put('/api/raffle-subject-Lists/:id', RaffleCtrl.update);
+app.post('/api/raffle-subject-Lists', RaffleCtrl.create);
 
 // Connections
 var port = 9876;

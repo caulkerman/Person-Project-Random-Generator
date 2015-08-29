@@ -1,5 +1,5 @@
-app.controller("mainController", function($scope, mainService) {
+app.controller("mainController", function($scope) {
 
-// $scope.test = "This is a test from mainController";
+
 
 });

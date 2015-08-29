@@ -22,6 +22,9 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 		var subject = {
 			name: subjectName,
 			item: [] };
+			if (subjectName === "") {
+				return console.log("error, empty string")
+			}
 		
 		setItUpService.postSubjectList(subject).then(function(response) { //this will return only the one posted request.
 			if (response.status === 200) {
@@ -34,10 +37,41 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 		$scope.getSubjectLists();
 	};
 
+	// $scope.postRaffleList = function(subjectName) { 
+	// 	var subject = {
+	// 		name: subjectName,
+	// 		item: [] };
+	// 		if (subjectName === "") {
+	// 			return console.log("error, empty string")
+	// 		}
+	// 	console.log("raffle post before going to service", subject)
+	// 	setItUpService.postRaffleList(subject).then(function(response) { //this will return only the one posted request.
+	// 		if (response.status === 200) {
+ //            $scope.subjectName = "";
+         
+	// 		} else {
+	// 			console.log("error. Server failed to store data");
+	// 		}
+	// 	});
+	// 	$scope.getSubjectLists();
+	// };
+
 
 ///////////////////PUT OR UPDATE FUNCTIONS IN CRUD///////////////
+
+
+$scope.showItemList = function(items, _id, name) {
+		$scope.currentItems = items;
+		$scope._id = _id;
+		$scope.itemParentName = name;
+	}
+
+
 	$scope.saveItemNames = function(itemName) {
-		$scope.currentItems.push(itemName);
+		if (itemName === "") {
+			return console.log("error, empty string")
+		}
+		$scope.currentItems.unshift(itemName);
 		var itemNames = $scope.currentItems;
 		setItUpService.saveItemNames(itemNames, $scope._id).then(function(response) {
 			if (response.status === 200) {
@@ -46,6 +80,20 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 			}
 		})
 	}
+
+	// $scope.saveItemRaffleNames = function(itemName) {
+	// 	if (itemName === "") {
+	// 		return console.log("error, empty string")
+	// 	}
+	// 	$scope.currentItems.unshift(itemName);
+	// 	var raffleItemNames = $scope.currentItems;
+	// 	setItUpService.saveItemRaffleNames(raffleItemNames, $scope._id).then(function(response) {
+	// 		if (response.status === 200) {
+	// 			$scope.itemName = "";
+	// 			console.log("subject has been updated")
+	// 		}
+	// 	})
+	// }
 
 
 ///////////////////DELETE FUNCTIONS IN CRUD//////////////////////
@@ -69,11 +117,7 @@ app.controller("setItUpCtrl", function($scope, setItUpService) {
 
 /////////////OTHER FUNCTIONS TO MAKE IT WORK/////////////////////
 
-	$scope.showItemList = function(items, _id, name) {
-		$scope.currentItems = items;
-		$scope._id = _id;
-		$scope.itemParentName = name;
-	}
+	
 
 	
 

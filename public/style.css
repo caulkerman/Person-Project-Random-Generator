@@ -1,4 +1,20 @@
+html {
+	background-color: #976053;
+}
+
+/*body {
+	background-color: #976053;
+}*/
+
+.body-div {
+	width: 80%;
+	margin: 0 auto;
+
+
+}
+
 #buttonimg {
+	float: left;
 	height: 200px;
 	width: 200px;
 }
@@ -27,13 +43,16 @@
 }
 
 .subjectList-container2 {
-	width: 50%;
+	width: 60%;
 	margin-bottom: 5px;
 	border-style: solid;
 	border-radius: 2px;
 	border-width: 3px;
-	border-color: #00CC00;
-	background-color: #33D633;
+	border-top-color: #00B800; 
+	border-right-color: #00B800;
+	border-bottom-color: #006600;
+	border-left-color: #006600;
+	background-color: #008F00;
 	font-size: 1.5em;
 	color: #fff;
 }
@@ -53,10 +72,52 @@
 	border
 }
 
-.itemList2 {
+.item-list-container2 {
+	margin-bottom: 5px;
+	width: 100%;
+	border-style: solid;
+	border-radius: 2px;
+	border-bottom-color: #FF4719;
+	border-left-color: #FF4719;
+	border-top-color: #FFAD99;
+	border-right-color: #FFAD99;
+	border-width: 3px;
+	background-color:#FF8566;
+	font-size: 1.25em;
+	color: #fff;
+	border
+}
+
+.main-item-listGo-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.button-container {
+	width: 50%;
+}
+
+.list-container-container {
+	width: 50%;
+}
+
+.home-main-container {
+	display: flex;
+	flex-direction; row;
+}
+
+.home-left-container {
+	width: 50%;
+}
+
+.home-right-container {
+	width: 50%;
+}
+
+/*.itemList2 {
 	width: 100%;
 	margin-bottom: 5px;
-}
+}*/
 
 .input {
 	width: 65.5%;
@@ -70,12 +131,18 @@ ul {
 .deleteButton {
 	float: right;
 	color: red;
+	height: 3px;
 
 }
 
 .deleteButton2 {
 	float: right;
-	height: 34px;
+	/*height: 34px;*/
 	color: red;
+}
 
+.header2 {
+	color: #DD360C;
+	font-size: 3em;
+	font-family: "Arial Black", Gadget, sans-serif;
 }

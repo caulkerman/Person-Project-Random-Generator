@@ -1,0 +1,17 @@
+<div ui-view></div>
+	<div class="body-div">
+		<h1>Infinity Style Subject List</h1>
+
+		<br/>  
+
+		<button ng-click="getSubjectList()">View Your Lists</button>
+		<br/>
+		<br/>
+	<div class="subjectList-container2" ng-repeat="subject in subjects track by $index" ng-click="getSubjectItemsList($index)">
+	    {{subject.name}} 
+	</div>
+</div>
+
+
+
+

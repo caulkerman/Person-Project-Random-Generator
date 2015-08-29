@@ -1,0 +1,16 @@
+<div ui-view></div>
+
+<div class="body-div">
+		<h1>Raffle Style Subject List</h1>
+
+		<br/>  
+
+		<!-- <button ng-click="()">View Your Lists</button> -->
+		<button ng-click="refreshAllLists()">View Your Lists</button>
+		<button ng-click="saveToRaffleServer()">Save it ALL</button> <!-- is the data from old response available to this button? -->
+		<br/>
+		<br/>
+	<div class="subjectList-container2" ng-repeat="oldResponse in oldResponses track by $index" ng-click="saveToRaffleServer(oldResponse)">
+	    {{oldResponse.name}} 
+	</div>
+</div>
