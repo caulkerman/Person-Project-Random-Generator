@@ -1,16 +1,18 @@
 <div ui-view></div>
 
 <div class="body-div">
-		<h1>Raffle Style Subject List</h1>
+		<h1>Raffle Style Randomizer</h1>
 
 		<br/>  
 
 		<!-- <button ng-click="()">View Your Lists</button> -->
-		<button ng-click="refreshAllLists()">View Your Lists</button>
-		<button ng-click="saveToRaffleServer()">Save it ALL</button> <!-- is the data from old response available to this button? -->
+		<button ng-click="viewAllLists()">View Your Lists</button>
+		<button ng-click="saveToRaffleServer()">Save it ALL</button>
 		<br/>
 		<br/>
-	<div class="subjectList-container2" ng-repeat="oldResponse in oldResponses track by $index" ng-click="saveToRaffleServer(oldResponse)">
-	    {{oldResponse.name}} 
+	<div class="subjectList-container2" ng-repeat="dataBase1List in dataBase1Lists track by $index">
+	    {{dataBase1List.name}}
+	    <button class="deleteButton" ng-click="bobber(dataBase1List)"></button>
 	</div>
+	<div class="empty-space"></div>
 </div>

@@ -3,7 +3,7 @@ var Raffle = require('../models/raffleServerModel');
 module.exports = {
 
   create: function(req, res) { 
-    var newRaffle = new Raffle(req.body);
+    var newRaffle = Raffle(req.body);
     newRaffle.save(function(err, result) {
       if (err) return res.status(500).send(err);
       else res.send(result);

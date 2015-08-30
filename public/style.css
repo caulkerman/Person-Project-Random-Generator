@@ -146,3 +146,9 @@ ul {
 	font-size: 3em;
 	font-family: "Arial Black", Gadget, sans-serif;
 }
+
+.empty-space {
+	height: 100px;
+	background-color: #fff;
+	width: 100%;
+}

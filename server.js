@@ -31,6 +31,7 @@ var mongoUri = 'mongodb://localhost:27017/random-generator';
 
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function() {  ////event listener
   console.log('connected to mongoDB at: ', mongoUri);
 });

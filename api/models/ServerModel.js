@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var RandomSchema = new mongoose.Schema ({
+var RandomSchema = mongoose.Schema ({
   name: { type: String },
   item: { type: Array }
   });

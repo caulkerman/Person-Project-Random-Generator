@@ -6,7 +6,7 @@
     <br/>
     <br/>
     <br/>
-    <input type="text" class="input" placeholder="Enter New Subject/Group Name and press ENTER" ng-model="subjectName" ng-keydown="$event.which === 13 && postSubjectList(subjectName); $event.which === 13 && postRaffleList(subjectName)"/>
+    <input type="text" class="input" placeholder="Enter New Subject/Group Name and press ENTER" ng-model="subjectName" ng-keydown="$event.which === 13 && postSubjectList(subjectName)"/>
     <!-- <button ng-click="postSubjectList(subjectName)">ADD</button> -->
 
     <br/>
@@ -19,13 +19,13 @@
   
   <div style="width: 50%;">
     <h2>{{itemParentName}} List</h2>
-    <input type="text" placeholder="Add Items or People and press ENTER"class="input" ng-model="itemName" ng-keydown="$event.which === 13 && saveItemNames(itemName); $event.which === 13 && saveItemRaffleNames(itemName)"/>
+    <input type="text" placeholder="Add Items or People and press ENTER" class="input" ng-model="newItem" ng-keydown="$event.which === 13 && saveItemNames(newItem)"/>
     <!-- <button ng-click="saveItemNames(itemName)">Add Items</button> -->
     <br/>
     <br/>
-      <div class="itemList-container1" ng-repeat="currentItem in currentItems track by $index">
-        {{currentItem}}
-        <button class="deleteButton2" ng-click="deleteItemList($index)"></button>
+      <div class="itemList-container1" ng-repeat="currentItem in currentItems track by $index">          
+          {{ currentItem }}
+          <button class="deleteButton2" ng-click="deleteItemList($index)"></button>
       </div>
   </div>
 </div>

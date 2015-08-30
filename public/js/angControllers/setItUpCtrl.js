@@ -64,18 +64,18 @@ $scope.showItemList = function(items, _id, name) {
 		$scope.currentItems = items;
 		$scope._id = _id;
 		$scope.itemParentName = name;
-	}
+}
 
-
-	$scope.saveItemNames = function(itemName) {
-		if (itemName === "") {
+	
+	$scope.saveItemNames = function(newItem) {
+		if (newItem.itemName === "") {
 			return console.log("error, empty string")
 		}
-		$scope.currentItems.unshift(itemName);
-		var itemNames = $scope.currentItems;
+				$scope.currentItems.unshift(newItem);
+				var itemNames = $scope.currentItems;
 		setItUpService.saveItemNames(itemNames, $scope._id).then(function(response) {
 			if (response.status === 200) {
-				$scope.itemName = "";
+				$scope.newItem = "";
 				console.log("subject has been updated")
 			}
 		})
