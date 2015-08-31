@@ -26,14 +26,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('raffleSubjectList', {
       url: "/raffleSubjectList",
       templateUrl: "htmlTemplates/raffleSubjectList.html",
-      controller: "raffleSubjectListCtrl"
+      controller: "raffleSubjectListCtrl",
+      
     })
 
     .state("raffleSubjectList.raffleItemListGo", {
       url: "/:item",
-      templateUrl: "htmlTemplates/raffleItemListGo",
+      templateUrl: "htmlTemplates/raffleItemListGo.html",
       controller: "raffleItemListGoCtrl"
     })
+
+    // .state("raffleSubjectList.setItUpRaffle", {
+    //   url: "/: setItUpRaffle",
+    //   templateUrl: "htmlTemplates/setItUpRaffle.html",
+    //   controller: "raffleSubjectListCtrl"
+    // })
     
     .state('help', {
       url: "/help",

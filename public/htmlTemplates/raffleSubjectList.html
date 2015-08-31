@@ -1,18 +1,32 @@
 <div ui-view></div>
-
 <div class="body-div">
 		<h1>Raffle Style Randomizer</h1>
 
 		<br/>  
 
-		<!-- <button ng-click="()">View Your Lists</button> -->
-		<button ng-click="viewAllLists()">View Your Lists</button>
-		<button ng-click="saveToRaffleServer()">Save it ALL</button>
+		<button ng-click="getListFromDb2()">Raffle Randomizer Lists</button>
+		<button ng-click="getviewAllLists()">Setup Raffle Lists</button>
+		<!-- <button ng-click="saveToRaffleServer()">Save it ALL</button> -->
 		<br/>
 		<br/>
+
+	
+
+	<div class="subjectList-container2" ng-repeat="db2ItemList in db2ItemLists track by $index" ng-click="getSubjectItemsList($index)">
+		{{db2ItemList.name}}
+		</div>
+
+
+
+
+
+
+
+
+<!--/////////THE FUNCTION BELOW SAVE DB1 SUBJECTS TO DB2////////-->
 	<div class="subjectList-container2" ng-repeat="dataBase1List in dataBase1Lists track by $index">
 	    {{dataBase1List.name}}
-	    <button class="deleteButton" ng-click="bobber(dataBase1List)"></button>
+	    <button class="deleteButton" ng-click="saveDataBase1ToDataBase2(dataBase1List)"></button>
 	</div>
 	<div class="empty-space"></div>
 </div>

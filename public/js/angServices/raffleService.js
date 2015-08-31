@@ -1,19 +1,31 @@
 app.service("raffleService", function($q, $http) {
 
 
-this.getSubjectLists = function() {
+this.getSubjectListsDb1 = function() {
 	var deferred = $q.defer();
 	$http({
 		method: "GET",
 		url: '/api/subject-items-Lists'
 	}).then(function(response) {
-		console.log("response from the official server", response);
+		console.log("response from Database #1", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
 
-this.saveRefreshedLists = function(refreshed) {
+this.getSubjectListsDb2 = function() {
+	var deferred = $q.defer();
+	$http({
+		method: "GET",
+		url: '/api/raffle-subject-Lists'
+	}).then(function(response) {
+		// console.log("response from Database #2", response);
+		deferred.resolve(response);
+	})
+	return deferred.promise;
+};
+
+this.saveDataBase1ToDataBase2 = function(refreshed) {
 	console.log("raffle service before it goes to server", refreshed);
 	var deferred = $q.defer();
 	$http({
@@ -28,12 +40,12 @@ this.saveRefreshedLists = function(refreshed) {
 }
 
 
-this.saveItemNames = function(itemNames, id) {
+this.updateRaffleItemLists = function(itemNames, id) {
 	console.log("services put method before it goes to server", itemNames)
 	var deferred = $q.defer();
 	$http({
 		method: "PUT",
-		url: '/api/subject-items-Lists/' + id,
+		url: '/api/raffle-subject-Lists/' + id,
 		data: itemNames
 	}).then(function(response) {
 		console.log("put method response", response)

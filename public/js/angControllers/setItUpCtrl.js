@@ -104,7 +104,7 @@ $scope.showItemList = function(items, _id, name) {
 		});
 	}
 
-	$scope.deleteItemList = function(index) {  //function caller on setItUpSubjectList.html page
+	$scope.updateItemList = function(index) {  //function caller on setItUpSubjectList.html page
 		$scope.currentItems.splice(index, 1);
 		var itemNames = $scope.currentItems;
 		setItUpService.saveItemNames(itemNames, $scope._id).then(function(response) {
