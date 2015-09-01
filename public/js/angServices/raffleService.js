@@ -54,7 +54,17 @@ this.updateRaffleItemLists = function(itemNames, id) {
 	return deferred.promise;
 };
 
-
+this.deleteDb2SubjectList = function(id) {
+	var deferred = $q.defer();
+	$http({
+		method: "DELETE",
+		url: '/api/raffle-subject-Lists/' + id,
+	}).then(function(response) {
+		console.log("deleted", response);
+		deferred.resolve(response);
+	})
+	return deferred.promise;
+};
 
 
 

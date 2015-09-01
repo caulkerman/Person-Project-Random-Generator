@@ -1,6 +1,6 @@
-html {
+/*html {
 	background-color: #976053;
-}
+}*/
 
 /*body {
 	background-color: #976053;
@@ -74,7 +74,7 @@ html {
 
 .item-list-container2 {
 	margin-bottom: 5px;
-	width: 100%;
+	width: 50%;
 	border-style: solid;
 	border-radius: 2px;
 	border-bottom-color: #FF4719;
@@ -83,7 +83,7 @@ html {
 	border-right-color: #FFAD99;
 	border-width: 3px;
 	background-color:#FF8566;
-	font-size: 1.25em;
+	font-size: 1.5em;
 	color: #fff;
 	border
 }
@@ -141,6 +141,18 @@ ul {
 	color: red;
 }
 
+.deleteButton3 {
+	float: right;
+	color: red;
+	height: 28px;
+}
+
+.deleteButton4 {
+	float: right;
+	color: green;
+	height: 28px;
+}
+
 .header2 {
 	color: #DD360C;
 	font-size: 3em;
@@ -151,4 +163,10 @@ ul {
 	height: 100px;
 	background-color: #fff;
 	width: 100%;
+}
+
+.infItmLisGO {
+	color: #004B7D;
+	font-size: 3em;
+	font-family: "Arial Black", Gadget, sans-serif;
 }

@@ -22,9 +22,11 @@ app.get('/api/subject-items-Lists', RandomCtrl.read);
 app.put('/api/subject-items-Lists/:id', RandomCtrl.update);
 app.delete('/api/subject-items-Lists/:id', RandomCtrl.delete);
 
+app.post('/api/raffle-subject-Lists', RaffleCtrl.create);
 app.get('/api/raffle-subject-Lists', RaffleCtrl.read);
 app.put('/api/raffle-subject-Lists/:id', RaffleCtrl.update);
-app.post('/api/raffle-subject-Lists', RaffleCtrl.create);
+app.delete('/api/raffle-subject-Lists/:id', RaffleCtrl.delete);
+
 
 // Connections
 var port = 9876;
