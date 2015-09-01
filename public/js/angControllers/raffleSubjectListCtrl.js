@@ -21,10 +21,10 @@ $scope.saveDataBase1ToDataBase2 = function(dataBase1List) {
 $scope.getListFromDb2 = function() {
 	raffleService.getSubjectListsDb2().then(function(response) {
 		$scope.db2ItemLists = response.data;
-		console.log(response.data);
-		if (response.data === "") {
-			alert("You need to set up your Randomizer Lists")
-		}
+		console.log("lists available from db2", $scope.db2ItemLists);
+		// if (response.data === "") {
+		// 	alert("You need to set up your Randomizer Lists")
+		// }
 		// console.log("coming from db2 assigned to $scope.db2ItemLists", $scope.db2ItemLists);
 	});
 }
@@ -33,7 +33,7 @@ $scope.getSubjectItemsList = function(index) {
 	// console.log(index);
 	$scope.db2Items = $scope.db2ItemLists[index].item;
 	$scope.db2Id =    $scope.db2ItemLists[index]._id;
-	console.log("what it $scope.db2Id?", $scope.db2Id);
+	console.log("says it's not defined", $scope.db2Items);
 	$state.go("raffleSubjectList.raffleItemListGo",
 	 	{item: $scope.db2ItemLists[index].name})
 

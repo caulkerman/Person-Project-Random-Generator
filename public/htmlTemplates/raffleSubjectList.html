@@ -1,5 +1,5 @@
 <div class="body-div">
-
+<div ui-view></div>
 		<h1>Raffle Style Randomizer</h1>
 
 		<br/>  
@@ -23,7 +23,7 @@
 	<div class="subjectList-container2" ng-repeat="dataBase1List in dataBase1Lists track by $index">
 	    {{dataBase1List.name}}
 	    <button class="deleteButton4" ng-click="saveDataBase1ToDataBase2(dataBase1List)">o</button>
-	    <button class="deleteButton3" ng-click="deleteDb2Obj($index)">x</button>
+	    <!-- <button class="deleteButton3" ng-click="deleteDb2Obj($index)">x</button> -->
 	</div>
 	<div class="empty-space"></div>
 
