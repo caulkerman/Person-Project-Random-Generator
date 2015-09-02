@@ -1,32 +1,27 @@
 
 <h1 class="infItmLisGO" align="center">Infinity Style Randomizer</h1>
 <div class="body-div">
-<hr>
-<br/>
-<div class="main-item-listGo-container">
-
-
-	<div class="button-container">
-		<div>
+	<hr>
+	<br/>
+	<div class="main-item-listGo-container">
+		<div class="button-container">
 			<div>
-			<header2 class="header2">{{finalRandomItem}}</header2>
-			</div>
-			<div>
-				<img id="buttonimg" src="artwork/go_button2.jpg" class="animated tada" ng-click="randomize()">
+				<div>
+				<header2 class="header2">{{finalRandomItem}}</header2>
+				</div>
+				<div>
+					<img id="buttonimg" src="artwork/go_button2.jpg" class="animated tada" ng-click="randomize()">
+				</div>
 			</div>
 		</div>
-		
-	</div>
-	 <br>
-	
-	<div class="list-container-container">
-		<div>
-			<div class="item-list-container2" ng-repeat="item in items track by $index" >
-			{{item}}</div>
+		 <br>
+		<div class="list-container-container">
+			<div>
+				<div class="item-list-container2" ng-repeat="item in items track by $index" >
+					{{item}}
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-
-
-<hr>
+	<hr>
 </div>

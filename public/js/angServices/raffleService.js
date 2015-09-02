@@ -7,11 +7,11 @@ this.getSubjectListsDb1 = function() {
 		method: "GET",
 		url: '/api/subject-items-Lists'
 	}).then(function(response) {
-		console.log("response from Database #1", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
+
 
 this.getSubjectListsDb2 = function() {
 	var deferred = $q.defer();
@@ -19,11 +19,11 @@ this.getSubjectListsDb2 = function() {
 		method: "GET",
 		url: '/api/raffle-subject-Lists'
 	}).then(function(response) {
-		// console.log("response from Database #2", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
+
 
 this.saveDataBase1ToDataBase2 = function(refreshed) {
 	console.log("raffle service before it goes to server", refreshed);
@@ -33,7 +33,6 @@ this.saveDataBase1ToDataBase2 = function(refreshed) {
 		url: '/api/raffle-subject-Lists',
 		data: refreshed
 	}).then(function(response) {
-		console.log("POST response from new server", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
@@ -48,11 +47,12 @@ this.updateRaffleItemLists = function(itemNames, id) {
 		url: '/api/raffle-subject-Lists/' + id,
 		data: itemNames
 	}).then(function(response) {
-		console.log("put method response", response)
+		console.log("updated", response);
 		deferred.resolve(response);
 	})
 	return deferred.promise;
 };
+
 
 this.deleteDb2SubjectList = function(id) {
 	var deferred = $q.defer();

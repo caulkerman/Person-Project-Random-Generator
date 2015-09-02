@@ -1,6 +1,7 @@
 var app = angular.module("randomApp", ['ui.router', /*'ngAnimate', 'ui.bootstrap'*/]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
+  
   // For any unmatched url, redirect to /home
   $urlRouterProvider.otherwise("/home");
   
@@ -35,12 +36,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "htmlTemplates/raffleItemListGo.html",
       controller: "raffleItemListGoCtrl"
     })
-
-    // .state("raffleSubjectList.setItUpRaffle", {
-    //   url: "/: setItUpRaffle",
-    //   templateUrl: "htmlTemplates/setItUpRaffle.html",
-    //   controller: "raffleSubjectListCtrl"
-    // })
     
     .state('help', {
       url: "/help",
@@ -54,11 +49,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     
-
-
-
-
-
-    });
+});
 
    

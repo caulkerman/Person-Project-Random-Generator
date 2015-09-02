@@ -1,34 +1,36 @@
 <div class="body-div">
-<div style="display: flex;
-  flex-direction: row;">
-  <div style="width: 50%;">
-    <button ng-click="getSubjectLists()">View Subject List</button>
-    <br/>
-    <br/>
-    <br/>
-    <input type="text" class="input" placeholder="Enter New Subject/Group Name and press ENTER" ng-model="subjectName" ng-keydown="$event.which === 13 && postSubjectList(subjectName)"/>
-    <!-- <button ng-click="postSubjectList(subjectName)">ADD</button> -->
-
-    <br/>
-    <br/>
-    <div class="subjectList-container1" ng-repeat="subjectList in subjectLists" ng-click="showItemList(subjectList.item, subjectList._id, subjectList.name)">
-		  {{subjectList.name}}
+  <div style="display: flex;
+    flex-direction: row;">
+    <div style="width: 50%;">
+      <!-- <button ng-click="getSubjectLists()">View Subject List</button> -->
+      <!-- <br/>
+      <br/>
+      <br/> -->
+      <h2>Category or Subject List</h2>
+      <input type="text" class="rounded focus" placeholder="Enter New Subject/Group Name and press ENTER" ng-model="subjectName" ng-keydown="$event.which === 13 && postSubjectList(subjectName)"/>
+      <br/>
+      <br/>
+      
+      <div class="subjectList-container1 inline" ng-repeat="subjectList in subjectLists" >
+      <div class="left" ng-click="showItemList(subjectList.item, subjectList._id, subjectList.name)">
+  		  {{subjectList.name}}
+        </div>
         <button class="deleteButton" ng-click="deleteSubjectList($index)"></button>
-		</div>
+  		</div>
+    </div>
+    
+    <div style="width: 50%;">
+      <h2>{{itemParentName}} List</h2>
+      <input type="text" class="rounded focus" placeholder="Add Items or People and press ENTER" class="input" ng-model="newItem" ng-keydown="$event.which === 13 && saveItemNames(newItem)"/>
+      <!-- <button ng-click="saveItemNames(itemName)">Add Items</button> -->
+      <br/>
+      <br/>
+        <div class="itemList-container1" ng-repeat="currentItem in currentItems track by $index">          
+            {{ currentItem }}
+            <button class="deleteButton2" ng-click="updateItemList($index)"></button>
+        </div>
+    </div>
   </div>
-  
-  <div style="width: 50%;">
-    <h2>{{itemParentName}} List</h2>
-    <input type="text" placeholder="Add Items or People and press ENTER" class="input" ng-model="newItem" ng-keydown="$event.which === 13 && saveItemNames(newItem)"/>
-    <!-- <button ng-click="saveItemNames(itemName)">Add Items</button> -->
-    <br/>
-    <br/>
-      <div class="itemList-container1" ng-repeat="currentItem in currentItems track by $index">          
-          {{ currentItem }}
-          <button class="deleteButton2" ng-click="updateItemList($index)"></button>
-      </div>
-  </div>
-</div>
 </div>
 
 

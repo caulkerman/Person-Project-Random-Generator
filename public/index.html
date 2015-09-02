@@ -4,25 +4,21 @@
 	<title></title>
 	<link rel="stylesheet" href="animate.css">
 	<link rel="stylesheet" href="style.css">
-	<!-- <link rel="stylesheet" href="dropdown-menu.css"> -->
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.js"></script> -->
-	<!-- <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script> -->
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 <div class="body-div">
-	<div ng-controller="mainController">
-		<h1 align="center">Can't Choose</h1>
+	<div ng-controller="mainController" class="header">
+		<h1 class="header1" align="center">The Randomizer</h1>
 		<br>
-		<button ui-sref="home">HOME</button>
-		<!-- <button ui-sref="infinitySubjectList">SUBJECTS</button> -->
-		<button ui-sref="setItUp">SET IT UP</button>
-		<button ui-sref="help">HELP</button>
+		<ul>
+			<li><a ui-sref="home">THE RANDOMIZER</a></li>
+			<li><a ui-sref="setItUp">SET IT UP</a></li>
+			<li><a ui-sref="help">HELP</a></li>
+		</ul>
 		
-		<br/>
 	</div>
-    <hr>
-    </div>
+</div>
 	<div ui-view></div>
 
 <!-- /////scripts\\\\\\\	 -->

@@ -1,29 +1,26 @@
+<h1 class="infItmLisGO" align="center"> Raffle Style Randomizer</h1>
 <div class="body-div">
-<br/>
-<div class="main-item-listGo-container">
-
-
-	<div class="button-container">
-		<div>
+	<br/>
+	<div class="main-item-listGo-container">
+		<div class="button-container">
 			<div>
-			<header2 class="header2">{{finalRandomItems}}</header2>
-			</div>
-			<div>
-				<img id="buttonimg" src="artwork/go_button2.jpg" class="animated tada" ng-click="randomize()">
+				<div>
+				<header2 class="header2">{{finalRandomItems}}</header2>
+				</div>
+				<div>
+					<img id="buttonimg" src="artwork/go_button2.jpg" class="animated tada" ng-click="randomize()">
+				</div>
 			</div>
 		</div>
-		
-	</div>
-	 <br>
-	
-	<div class="list-container-container">
-		<div>
-			<div class="item-list-container2" ng-repeat="db2Item in db2Items track by $index" >
-			{{db2Item}}</div>
+		 <br>
+		<div class="list-container-container">
+			<div>
+				<h2>{{db2Names}} List</h2>
+				<div class="item-list-container2" ng-repeat="db2Item in db2Items track by $index" >
+				{{db2Item}}
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-
-
-<hr>
+	<hr>
 </div>

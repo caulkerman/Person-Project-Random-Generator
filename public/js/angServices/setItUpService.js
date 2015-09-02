@@ -25,21 +25,6 @@ this.postSubjectList = function(subject) {
 };
 
 
-// this.postRaffleList = function(subject) {
-// 	console.log("raffle service before it goes to server", subject);
-// 	var deferred = $q.defer();
-// 	$http({
-// 		method: "POST",
-// 		url: '/api/raffle-subject-Lists',
-// 		data: subject
-// 	}).then(function(response) {
-// 		console.log("POST response from new server", response);
-// 		deferred.resolve(response);
-// 	})
-// 	return deferred.promise;
-// }
-
-
 this.deleteSubjectList = function(id) {
 	var deferred = $q.defer();
 	$http({
@@ -65,20 +50,6 @@ this.saveItemNames = function(itemNames, id) {
 	})
 	return deferred.promise;
 };
-
-// this.saveItemRaffleNames = function(itemNames, id) {
-// 	var deferred = $q.defer();
-// 	$http({
-// 		method: "PUT",
-// 		url: '/api/raffle-subject-Lists/' + id,
-// 		data: itemNames
-// 	}).then(function(response) {
-// 		console.log("items updated", response)
-// 		deferred.resolve(response);
-// 	})
-// 	return deferred.promise;
-// };
-
 
 
 
