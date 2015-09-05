@@ -11,8 +11,8 @@
       <br/>
       <br/>
       
-      <div class="subjectList-container1 inline" ng-repeat="subjectList in subjectLists" >
-      <div class="left" ng-click="showItemList(subjectList.item, subjectList._id, subjectList.name)">
+      <div class="subjectList-container1 inline" ng-repeat="subjectList in subjectLists track by $index" >
+      <div class="left" ng-click="showItemList(subjectList.item, subjectList._id, subjectList.name, $index)">
   		  {{subjectList.name}}
         </div>
         <button class="deleteButton" ng-click="deleteSubjectList($index)"></button>

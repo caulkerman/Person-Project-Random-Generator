@@ -3,7 +3,7 @@ var Random = require('../models/ServerModel');
 module.exports = {
 
   create: function(req, res) { 
-    var newRandom = Random(req.body);
+    var newRandom = new Random(req.body);//don't need the "new" but we will put it in anyway.
     newRandom.save(function(err, result) {
       if (err) return res.status(500).send(err);
       else res.send(result);

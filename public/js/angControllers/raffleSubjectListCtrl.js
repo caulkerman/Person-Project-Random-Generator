@@ -4,7 +4,11 @@ app.controller("raffleSubjectListCtrl", function($scope, $state, $stateParams, s
 //////RAFFLE SETUP FUNCTIONS///////////////// 
 var getDb1SubjectLists = function() {
 	raffleService.getSubjectListsDb1().then(function(response) {
-		$scope.dataBase1Lists = response.data;
+		// if (response.data === 200) {//this line is new
+			$scope.dataBase1Lists = response.data;////this line is old
+			// raffleService.saveDataBase1ToDataBase2($scope.dataBase1Lists).then(function(respo) {
+			// })
+		
 	});
 }
 getDb1SubjectLists();

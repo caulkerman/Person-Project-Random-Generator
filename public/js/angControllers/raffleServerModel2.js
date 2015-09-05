@@ -1,9 +1,11 @@
 var mongoose = require("mongoose");
 
 var RaffleSchema = mongoose.Schema ({
+	[object {
+		item: { type: Array },
+		name: { type: String }
+	}]
 	
-	item: { type: Array },
-	name: { type: String }
 });
 
 var raffleName = "raffle-generator";

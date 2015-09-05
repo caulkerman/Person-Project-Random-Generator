@@ -72,6 +72,7 @@ $scope.deleteSubjectList = function(index) {
 	setItUpService.deleteSubjectList(id).then(function(response) {
 		getSubjectLists();
 	});
+	
 }
 
 	
