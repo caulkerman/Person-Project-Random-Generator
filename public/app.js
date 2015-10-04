@@ -1,4 +1,4 @@
-var app = angular.module("randomApp", ['ui.router', /*'ngAnimate', 'ui.bootstrap'*/]);
+var app = angular.module("randomApp", ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   
@@ -28,7 +28,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/raffleSubjectList",
       templateUrl: "htmlTemplates/raffleSubjectList.html",
       controller: "raffleSubjectListCtrl",
-      
     })
 
     .state("raffleSubjectList.raffleItemListGo", {
