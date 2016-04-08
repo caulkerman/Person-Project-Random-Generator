@@ -1,10 +1,11 @@
-app.controller("setItUpCtrl", function($scope, setItUpService) {
+app.controller("setItUpCtrl", function($scope, setItUpService, $log) {
 
 	 
 ///////////////GET OR READ FUNCTIONS IN CRUD//////////////////
 
 var getSubjectLists = function() { 
 	setItUpService.getSubjectLists().then(function(response) {
+		console.log("this is GET response from database in controller ", response);
 		$scope.subjectLists = response.data;
 	});
 };
@@ -25,18 +26,20 @@ $scope.postSubjectList = function(subjectName) {
 		name: subjectName,
 		item: [] };
 		
-		if (subjectName === "") {
-			return console.log("error, empty string");
-		}
+		if (subjectName === "" || subjectName === undefined) {
+			console.log("error, empty string");
+			return;
+		} else {
 		
-		setItUpService.postSubjectList(subject).then(function(response) { //this will return only the one posted request.
-			if (response.status === 200) {
-            $scope.subjectName = "";
-         } else {
-			console.log("error. Server failed to store data");
-			}
-		});
-		getSubjectLists();
+			setItUpService.postSubjectList(subject).then(function(response) { //this will return only the one posted request.
+				$log.log("this is response in Controller ", response);
+				if (response.status === 200) {
+	            $scope.subjectName = "";
+	         }
+				console.log("error. Server failed to store data");
+			});
+			getSubjectLists();
+		}
 };
 
 
@@ -51,17 +54,19 @@ $scope.showItemList = function(items, _id, name) {
 
 	
 $scope.saveItemNames = function(newItem) {
-	if (newItem === "") {
-		return console.log("error, empty string")
+	if (newItem === "" || newItem === undefined) {
+		console.warn("error, empty string")
+		return;
+	} else {
+		$scope.currentItems.unshift(newItem);
+		var itemNames = $scope.currentItems;
+		setItUpService.saveItemNames(itemNames, $scope._id).then(function(response) {
+			if (response.status === 200) {
+				$scope.newItem = "";
+				console.log("subject has been updated")
+			}
+		});
 	}
-	$scope.currentItems.unshift(newItem);
-	var itemNames = $scope.currentItems;
-	setItUpService.saveItemNames(itemNames, $scope._id).then(function(response) {
-		if (response.status === 200) {
-			$scope.newItem = "";
-			console.log("subject has been updated")
-		}
-	})
 }
 
 

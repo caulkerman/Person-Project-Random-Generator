@@ -2,7 +2,9 @@ app.controller("infinitySubjectListCtrl", function($scope, $state, $stateParams,
 
 var getSubjectList = function() { 
 	setItUpService.getSubjectLists().then(function(response) {
+		console.log(response);
 			$scope.subjects = response.data;
+
 	});
 };
 
