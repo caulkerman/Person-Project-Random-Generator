@@ -9,7 +9,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
     .state('home', {
       url: "/home",
-      templateUrl: "htmlTemplates/homeTmpl.html" 
+      templateUrl: "htmlTemplates/homeTmpl.html"
     })
     
     .state('infinitySubjectList', {
